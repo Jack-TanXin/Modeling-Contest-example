@@ -15,7 +15,7 @@
 % 编译数次——无论你使用哪种发行版或编辑器，原因详见\LaTeX
 % 的编译原理，一般写好以后编译2次就是文章真正的面目。
 % ------------------------------------------------------ %
-\documentclass[UTF8,12pt]{ctexart}
+\documentclass[hyperref,UTF8,12pt]{ctexart}
 
 % ------------------------------------------------------ %
 % 下面的包基本上都是数学建模必需的包，没有这些包我想基
@@ -33,7 +33,16 @@
 \usepackage{float}
 \usepackage{booktabs}
 
-
+% 链接包：这个宏包在论文中没有任何作用，单纯为了方便给我做广告
+% 让目录可以索引到正文
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
 
 % 务必注意：图片在figures目录下
 % 务必注意：图片在figures目录下
@@ -55,10 +64,10 @@
 
 
 
-\author{} % 不要动
-\date{} % 不要动
-\maketitle % 不要动
-\vspace{-4em}  % 消除作者和日期造成的空白
+\author{} % 不要动!!
+\date{} % 不要动!!
+\maketitle % 不要动!!
+\vspace{-4em}  % 不要动!!
 
 
 
@@ -92,9 +101,13 @@
 % ------------------------------------------------------------ %
 %    设置正文的页眉、页脚，页眉没有内容，页码在页脚中间
 %    并将本页设置为第一页
+%    我浅浅用页眉给自己做了个广告，大家记得删除啊！
 % ------------------------------------------------------------ %
 \pagestyle{fancy}
-\fancyhead[R]{} % 页眉右侧清空
+% 这是个广告，正式使用时请删除这一行
+\fancyhead[R]{\href{https://jack-tanxin.github.io}{点击这里关注更多内容}} 
+% 删除上一行后将下面的这句\fancyhead[R]{}前面的百分号删除就行
+% \fancyhead[R]{}
 \fancyhead[C]{} % 页眉中间清空
 \fancyhead[L]{} % 页眉左侧清空
 \fancyfoot[R]{} % 页脚右侧清空
