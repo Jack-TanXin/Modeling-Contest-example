@@ -1,7 +1,8 @@
 % ------------------------------------------------------ %
 % 由于很多参加数学建模竞赛的同学没有\LaTeX基础，因此做
 % 本模板用于各位写手快速上手写作，不要追究原理，先把模
-% 板用会再说
+% 板用会再说。PS：上交附件时请把这部分注释全部删掉，作
+% 品出现任何信息都会判为作弊，这里出现我的信息了。
 % ------------------------------------------------------ %
 %         谈欣 如有错误请联系1792733991@qq.com
 %         谈欣 如有错误请联系1792733991@qq.com
@@ -15,7 +16,11 @@
 % 编译数次——无论你使用哪种发行版或编辑器，原因详见\LaTeX
 % 的编译原理，一般写好以后编译2次就是文章真正的面目。
 % ------------------------------------------------------ %
-\documentclass[hyperref,UTF8,12pt]{ctexart}
+%              请使用XeLaTeX进行编译！！！
+%              请使用XeLaTeX进行编译！！！
+%              请使用XeLaTeX进行编译！！！
+% ------------------------------------------------------ %
+\documentclass[UTF8,12pt]{ctexart}
 
 % ------------------------------------------------------ %
 % 下面的包基本上都是数学建模必需的包，没有这些包我想基
@@ -29,20 +34,22 @@
 \usepackage{graphicx}
 \usepackage{subfigure}
 
-% 表格包
+% 插入表格的包
 \usepackage{float}
 \usepackage{booktabs}
 
+% 颜色包，定义颜色，会在附录中使用到
+\usepackage{xcolor}
+\definecolor{gray}{RGB}{128,128,128}
+
 % 链接包：这个宏包在论文中没有任何作用，单纯为了方便给我做广告
-% 让目录可以索引到正文
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    filecolor=magenta,      
-    urlcolor=cyan,
-    pdftitle={Overleaf Example},
-    pdfpagemode=FullScreen,
-    }
+% 让目录可以索引到正文，所以这个包不能删！
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,filecolor=magenta,urlcolor=cyan,pdftitle={Overleaf Example},pdfpagemode=FullScreen}
+    
+% 附录插入代码
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,columns=fullflexible,frame=single,breaklines=true,keywordstyle=\color{blue},commentstyle=\color{gray}}
 
 % 务必注意：图片在figures目录下
 % 务必注意：图片在figures目录下
@@ -80,20 +87,20 @@
 
 
 
-\thispagestyle{empty}  % 清除摘要页的页码
-\newpage  % 另开一页写目录
+\thispagestyle{empty}  % 清除摘要页的页码，不要动!!
+\newpage  % 另开一页写目录，不要动!!
 
 
 
 % ------------------------------------------------------------ %
 %    这一部分自动生成目录，同时清除目录页的页眉和页脚，
 %    清除目录页的页码以保证正文的第一面为页码1
-%    并新开一面
+%    并新开一面，如果不想要目录直接删除这部分
 % ------------------------------------------------------------ %
 \pagestyle{fancy}
 \fancyhead{} % 页眉清空
 \fancyfoot{} % 页脚清空
-\begin{center} \tableofcontents \end{center}
+\begin{center} \tableofcontents \end{center} 
 \thispagestyle{empty}\newpage
 
 
@@ -103,17 +110,17 @@
 %    并将本页设置为第一页
 %    我浅浅用页眉给自己做了个广告，大家记得删除啊！
 % ------------------------------------------------------------ %
-\pagestyle{fancy}
+\pagestyle{fancy} % 不要动!!
 % 这是个广告，正式使用时请删除这一行
 \fancyhead[R]{\href{https://jack-tanxin.github.io}{点击这里关注更多内容}} 
 % 删除上一行后将下面的这句\fancyhead[R]{}前面的百分号删除就行
 % \fancyhead[R]{}
-\fancyhead[C]{} % 页眉中间清空
-\fancyhead[L]{} % 页眉左侧清空
-\fancyfoot[R]{} % 页脚右侧清空
-\fancyfoot[C]{- {\thepage}\ -} % 页脚中间为页码
-\fancyfoot[L]{} % 页脚左侧清空
-\setcounter{page}{1}  
+\fancyhead[C]{} % 页眉中间清空 不要动!!
+\fancyhead[L]{} % 页眉左侧清空 不要动!!
+\fancyfoot[R]{} % 页脚右侧清空 不要动!!
+\fancyfoot[C]{- {\thepage}\ -} % 页脚中间为页码 不要动!!
+\fancyfoot[L]{} % 页脚左侧清空 不要动!!
+\setcounter{page}{1}  % 不要动!!
 
 
 
@@ -214,6 +221,16 @@
 %    打开chapter文件夹里的参考文献.tex文件，编辑其中的内容
 % ------------------------------------------------------------ %
 \input{chapter/参考文献.tex}
+\newpage
+
+
+
+% ------------------------------------------------------------ %
+%    打开chapter文件夹里的附录.tex文件，编辑其中的内容
+% ------------------------------------------------------------ %
+%    打开chapter文件夹里的附录.tex文件，编辑其中的内容
+% ------------------------------------------------------------ %
+\input{chapter/附录.tex}
 
 
 \end{document} 
