@@ -1,0 +1,41 @@
+\section{问题一的模型建立与求解}
+
+%\subsection{数据预处理}
+
+\subsection{模型建立}
+
+模型建立部分是需要有大量的数学公式的，而很多小伙伴都没有 \LaTeX 基础，这里就不得不提到Mathtype了，队友可以先用Mathtype在Word或者WPS中敲好公式，然后再用Mathtype直接将公式转换为Tex代码。Mathtype安装、配置方法可以在我的个人网页中找到哈，仅供学习使用，不可用作商业用途！
+
+值得注意的是这样转换而来的代码还是需要修改的，但是这个修改很容易！！！首先要注意，转换出来的代码全都是用：
+
+\begin{lstlisting}
+\[数学公式Tex代码\]
+\end{lstlisting}
+
+当然不排除我的Mathtype版本不对，正版、新版的已经修正。如果这样的话你需要把行内公式改为用一前一后的一对“\$”包裹，而行间公式则是用专门的数学环境——equation环境包裹。行内公式和行间公式示例如下：
+
+\begin{lstlisting}
+% Mathtype转化出的行内数学公式Tex代码
+本部分使用\[\dfrac{4}{5}\]的数据集作为训练集……
+
+% 正确修改为
+本部分使用$\dfrac{4}{5}$的数据集作为训练集……
+\end{lstlisting}
+
+\begin{lstlisting}
+% Mathtype转化出的行间数学公式Tex代码
+即可得到：
+\[a+b\leq c+d\]
+
+% 正确修改为
+即可得到：
+\begin{equation}
+    a+b\leq c+d
+\end{equation}
+\end{lstlisting}
+
+
+
+
+
+\subsection{模型求解}
