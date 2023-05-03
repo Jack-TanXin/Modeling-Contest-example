@@ -38,6 +38,11 @@
 \usepackage{float}
 \usepackage{booktabs}
 
+% 删去图注、表注的冒号
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{twospace}{\ ~}   %%这三条语句即可
+\captionsetup{labelsep=twospace}
+
 % 颜色包，定义颜色，会在附录中使用到
 \usepackage{xcolor}
 \definecolor{gray}{RGB}{128,128,128}
